@@ -1,0 +1,12 @@
+name: Disparando a Action com Push
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  push-teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testando o workflow_dispatch
+        run: |
+          echo "O input do workflow_dispatch é: ${{ github.ref_name }}!"

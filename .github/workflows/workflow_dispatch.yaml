@@ -1,6 +1,12 @@
 name: Workflow Dispatch
 on:
   workflow_dispatch:
+    inputs:
+      teste:
+        description: 'Teste de entrada para o workflow'
+        type: string
+        default: 'Teste Padrão'
+        required: true
 
 jobs:
   teste:
@@ -8,4 +14,4 @@ jobs:
     steps:
       - name: Testando o workflow_dispatch
         run: |
-          echo "Workflow Dispatch Teste com sucesso!"
+          echo "O input do workflow_dispatch é: ${{ inputs.teste }}!"

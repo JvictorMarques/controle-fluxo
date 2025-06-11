@@ -25,7 +25,7 @@ jobs:
       - name: Executando na test
         if: ${{ startsWith(github.ref_name, 'test/') }}
         run: echo "Executando o comando na branch de test"
-      - name: Executando na main
+      - name: Inserindo um erro
         # continue-on-error: true
         run: |
           echo "Executando o comando na branch main"

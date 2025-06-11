@@ -1,0 +1,23 @@
+name: Trabalhando com Operadores de Expressão
+on:
+  workflow_dispatch:
+    inputs:
+      valor_numerico:
+        description: Número
+        type: number
+        default: 20
+      valor_string:
+        description: Palavra
+        type: string
+        default: "Valor String"
+      valor_boolean:
+        description: Verdadeiro ou Falso
+        type: boolean
+        default: true
+
+jobs:
+  expressoes-operadores:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Operação com String
+          run: echo "${{ github.actor == inputs.valor_string }}"

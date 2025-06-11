@@ -1,10 +1,10 @@
-name: Disparando a Action com Push
+name: Disparando a Action com Cron
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/2 * * * *'
 
 jobs:
-  push-teste:
+  cron-teste:
     runs-on: ubuntu-latest
     steps:
       - name: Testando o agendamento

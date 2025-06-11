@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Testando o push
         run: |
-          echo "O input do workflow_dispatch é: ${{ github.ref_name }}!"
+          echo "A branch é: ${{ github.ref_name }}!"

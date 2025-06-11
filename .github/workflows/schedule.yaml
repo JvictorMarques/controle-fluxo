@@ -1,0 +1,17 @@
+name: Disparando a Action com Push
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+
+jobs:
+  push-teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testando o agendamento
+        run: |
+          echo "O workflow foi disparado pelo agendamento!"
+          echo "Data e hora atual: $(date)"
+          echo "Branch atual: ${{ github.ref_name }}"
+          echo "Evento: ${{ github.event_name }}"
+          echo "Workflow ID: ${{ github.workflow }}"
+          echo "Repository: ${{ github.repository }}"

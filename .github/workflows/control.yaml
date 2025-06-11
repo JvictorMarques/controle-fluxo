@@ -30,4 +30,5 @@ jobs:
           echo "Executando o comando na branch main"
           exit 1;
       - name: Envie o erro
+        if: ${{ failure() }}
         run: echo "Erro A branch não é uma feature, hotfix ou test"

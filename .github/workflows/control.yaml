@@ -1,0 +1,12 @@
+name: Trabalhando com Controle de Execução
+run-name: A branch atual é ${{ github.base_ref }}
+on:
+  push:
+
+jobs:
+  main:
+    name: Esse job é executado apenas na branch main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executando na main
+        run: echo "Executando o comando na main"

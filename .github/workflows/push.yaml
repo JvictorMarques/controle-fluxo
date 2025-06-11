@@ -1,8 +1,10 @@
 name: Disparando a Action com Push
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main 
+  # Linha comentada para não triggar toda hora
+  workflow_dispatch:
 
 jobs:
   push-teste:

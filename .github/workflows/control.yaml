@@ -4,14 +4,13 @@ on:
   push:
 
 jobs:
-  main:
-    if: ${{ github.ref_name == 'main' }}
-    name: Esse job é executado apenas na branch main
-    runs-on: ubuntu-latest
-    steps:
-      - name: Executando na main
-        run: echo "Executando o comando na main"
-
+  # main:
+  #   if: ${{ github.ref_name == 'main' }}
+  #   name: Esse job é executado apenas na branch main
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Executando na main
+  #       run: echo "Executando o comando na main"
   all-branches:
     name: Esse job é executado em todas as branches
     runs-on: ubuntu-latest
@@ -25,3 +24,10 @@ jobs:
       - name: Executando na test
         if: ${{ startsWith(github.ref_name, 'test/') }}
         run: echo "Executando o comando na branch de test"
+      - name: Executando na main
+        continue-on-error: true
+        run: |
+          echo "Executando o comando na branch main"
+          exit 1;
+      - name: Envie o erro
+        run: echo "Erro A branch não é uma feature, hotfix ou test"

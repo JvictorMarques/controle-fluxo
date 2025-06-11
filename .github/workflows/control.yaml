@@ -33,3 +33,11 @@ jobs:
       - name: Envie o erro
         # if: ${{ failure() }}
         run: echo "Erro A branch não é uma feature, hotfix ou test"
+
+  teste:
+    name: Teste erro Job anterior
+    runs-on: ubuntu-latest
+    needs: all-branches
+    steps:
+      - name: Printando o erro do job anterior
+        run: echo "O job anterior falhou, mas este job ainda está sendo executado"

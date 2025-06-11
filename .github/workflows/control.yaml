@@ -1,5 +1,5 @@
 name: Trabalhando com Controle de Execução
-run-name: A branch atual é ${{ github.base_ref }}
+run-name: A branch atual é ${{ github.ref_name }}
 on:
   push:
 

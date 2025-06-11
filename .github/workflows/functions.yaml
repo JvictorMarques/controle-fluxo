@@ -1,0 +1,27 @@
+name: Trabalhando com Funções
+on:
+  workflow_dispatch:
+    inputs:
+      valor_numerico:
+        description: Número
+        type: number
+        default: 20
+      valor_string:
+        description: Palavra
+        type: string
+        default: "Valor String"
+      valor_boolean:
+        description: Verdadeiro ou Falso
+        type: boolean
+        default: true
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Função Contains
+        run: echo "${{ contains(inputs.valor_string, github.actor )}}"
+      - name: Função Format
+        run: "echo ${{ format('Formato String: {1}, Formato Number: {0}', inputs.valor_numerico, inputs.valor_string) }}"
+      - name: Função JSon
+        run: echo "${{ toJson(github) }}"

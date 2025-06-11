@@ -21,3 +21,7 @@ jobs:
     steps:
         - name: Operação com String
           run: echo "${{ github.actor == inputs.valor_string }}"
+        - name: Operação com Number
+          run: echo "${{ inputs.valor_numerico >= 20 }}"
+        - name: Operação boolean
+          run: echo "${{ !inputs.valor_boolean }}"

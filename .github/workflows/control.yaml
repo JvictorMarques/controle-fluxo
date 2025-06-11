@@ -5,6 +5,7 @@ on:
 
 jobs:
   main:
+    if: ${{ github.ref_name == 'main' }}
     name: Esse job é executado apenas na branch main
     runs-on: ubuntu-latest
     steps:

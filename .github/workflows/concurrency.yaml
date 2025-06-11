@@ -1,0 +1,23 @@
+name: Trabalhando com Concorrência
+run-name: ${{ github.run_number }}
+on:
+  workflow_dispatch:
+concurrency:
+  group: 'concurrency-example'
+  cancel-in-progress: true
+
+jobs:
+  concurrency-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exemplo de concorrência 1
+        run: |
+          echo "Executando concorrência 1"
+          sleep 120;
+  concurrency-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exemplo de concorrência 1
+        run: |
+          echo "Executando concorrência 1"
+          sleep 120;

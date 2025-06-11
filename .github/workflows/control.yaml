@@ -23,5 +23,5 @@ jobs:
         if: ${{ startsWith(github.ref_name, 'hotfix/') }}
         run: echo "Executando o comando na branch de hotfix"
       - name: Executando na test
-        if: ${{ startsWith(github.ref_name, 'test') }}
+        if: ${{ startsWith(github.ref_name, 'test/') }}
         run: echo "Executando o comando na branch de test"

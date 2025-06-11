@@ -17,7 +17,7 @@ jobs:
   concurrency-2:
     runs-on: ubuntu-latest
     steps:
-      - name: Exemplo de concorrência 1
+      - name: Exemplo de concorrência 2
         run: |
-          echo "Executando concorrência 1"
+          echo "Executando concorrência 2"
           sleep 120;

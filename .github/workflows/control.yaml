@@ -11,3 +11,17 @@ jobs:
     steps:
       - name: Executando na main
         run: echo "Executando o comando na main"
+
+  all-branches:
+    name: Esse job é executado em todas as branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executando na feature
+        if: ${{ startsWith(github.ref_name, 'feature/') }}
+        run: echo "Executando o comando na branch de feature"
+      - name: Executando na hotfix
+        if: ${{ startsWith(github.ref_name, 'hotfix/') }}
+        run: echo "Executando o comando na branch de hotfix"
+      - name: Executando na test
+        if: ${{ startsWith(github.ref_name, 'test') }}
+        run: echo "Executando o comando na branch de test"
